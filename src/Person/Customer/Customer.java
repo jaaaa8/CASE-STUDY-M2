@@ -1,4 +1,4 @@
-package Person.Employee;
+package Person.Customer;
 
 import Person.Person;
 

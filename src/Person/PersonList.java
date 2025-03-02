@@ -1,6 +1,6 @@
 package Person;
 
-import Person.Employee.Customer;
+import Person.Customer.Customer;
 import Person.Employee.Employee;
 import Person.Employee.Leader;
 import Person.Employee.Manager;
@@ -16,7 +16,7 @@ public class PersonList {
 
     public void inputArrayPerson() {
         Scanner sc = new Scanner(System.in);
-        char index = '1';
+        char index;
         do {
             System.out.println("Người bạn muốn nhập là: ");
             System.out.println("1.Khách hàng.");
@@ -58,20 +58,15 @@ public class PersonList {
                     default -> person;
                 };
                 if (person != null) {
-                    if (person instanceof Leader) {
-                        person = new Leader();
-                        Leader man = (Leader) person;
+                    if (person instanceof Leader man) {
                         man.setTypeOfEmployee(typeOfEmployee);
                         man.input();
                         persons.add(man);
-                    } else if (person instanceof Manager) {
-                        person = new Manager();
-                        Manager man = (Manager) person;
+                    } else if (person instanceof Manager man) {
                         man.setTypeOfEmployee(typeOfEmployee);
                         man.input();
                         persons.add(man);
                     } else {
-                        person = new Employee();
                         Employee man = (Employee) person;
                         man.setTypeOfEmployee(typeOfEmployee);
                         man.input();
