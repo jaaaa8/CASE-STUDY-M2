@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Leader extends Employee {
     private int groupIndex;
 
-    public Leader(String name, String phoneNumber, String emailAddress, int indexProject, int yearOfJoining, String typeOfEmployee, int salary, int groupIndex) {
-        super(name, phoneNumber, emailAddress, indexProject, yearOfJoining, typeOfEmployee, salary);
+    public Leader(int id, String name, String phoneNumber, String emailAddress, int indexProject, int yearOfJoining, String typeOfEmployee, int salary, int groupIndex) {
+        super(id, name, phoneNumber, emailAddress, indexProject, yearOfJoining, typeOfEmployee, salary);
         this.groupIndex = groupIndex;
     }
 

@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class PersonList {
     private ArrayList<Person> persons;
+
     public PersonList() {
         persons = new ArrayList<Person>();
     }
@@ -83,5 +84,16 @@ public class PersonList {
             System.out.println("Nhập 1 để tiếp tục. Nhập bất kỳ để kết thúc!");
             index = sc.next().charAt(0);
         } while (index == '1');
+    }
+
+    public void deletePerson() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập vào ID của người muốn xóa: ");
+        int id = sc.nextInt();
+        for(int i = 0 ; i < persons.size() ; i++) {
+            if (persons.get(i).getId() == id) {
+                persons.remove(id);
+            }
+        }
     }
 }

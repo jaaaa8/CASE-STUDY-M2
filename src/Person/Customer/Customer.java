@@ -10,8 +10,8 @@ public class Customer extends Person {
     public Customer() {
     }
 
-    public Customer(String name, String phoneNumber, String emailAddress, int indexProject, boolean isPaidProject) {
-        super(name, phoneNumber, emailAddress, indexProject);
+    public Customer(int id,String name, String phoneNumber, String emailAddress, int indexProject, boolean isPaidProject) {
+        super(id,name, phoneNumber, emailAddress, indexProject);
         this.isPaidProject = isPaidProject;
     }
 

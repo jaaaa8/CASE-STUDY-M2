@@ -9,8 +9,8 @@ public class Employee extends Person {
     private String typeOfEmployee;
     private int salary;
 
-    public Employee(String name, String phoneNumber, String emailAddress, int indexProject, int yearOfJoining, String typeOfEmployee, int salary) {
-        super(name, phoneNumber, emailAddress, indexProject);
+    public Employee(int id, String name, String phoneNumber, String emailAddress, int indexProject, int yearOfJoining, String typeOfEmployee, int salary) {
+        super(id, name, phoneNumber, emailAddress, indexProject);
         this.yearOfJoining = yearOfJoining;
         this.typeOfEmployee = typeOfEmployee;
         this.salary = salary;

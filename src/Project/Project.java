@@ -2,13 +2,14 @@ package Project;
 
 import Person.Person;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Project {
     private String projectName;
     private String startDate;
     private String expectedEndDate;
-    private Person[] person;
+    private ArrayList<Person> person;
     private String typeOfProject;
     private long expense;
     private long revenue;
@@ -17,7 +18,7 @@ public class Project {
 
     public Project(){}
 
-    public Project(String projectName, String startDate, String expectedEndDate, Person[] person, String typeOfProject, long expense, long revenue, boolean isPaid, String actionHistory) {
+    public Project(String projectName, String startDate, String expectedEndDate, ArrayList<Person> person, String typeOfProject, long expense, long revenue, boolean isPaid, String actionHistory) {
         this.projectName = projectName;
         this.startDate = startDate;
         this.expectedEndDate = expectedEndDate;
