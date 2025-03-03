@@ -110,6 +110,6 @@ public class Project {
         double percentProfit = profit / 100.0;
         System.out.print("Lợi nhuận dự án là: "+(profit)+"\n" +
                 "Phần trăm lợi nhuận là "+(percentProfit)+"\n" +
-                "Dự án "+projectName+((percentProfit> 3) ? " đạt chỉ tiêu." : " không đạt chỉ tiêu."));
+                "Dự án "+projectName+((percentProfit> 1.4) ? " đạt chỉ tiêu." : " không đạt chỉ tiêu."));
     }
 }

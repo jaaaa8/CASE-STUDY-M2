@@ -95,5 +95,194 @@ public class PersonList {
                 persons.remove(id);
             }
         }
+        System.out.println("Đã xóa thành công.");
+    }
+
+    public void updatePerson() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập vào ID của người muốn sửa: ");
+        int id = sc.nextInt();
+        int n;
+        if(persons.get(id) instanceof Manager) {
+            do{
+                System.out.println("Bạn muốn sửa thông tin nào?");
+                System.out.println("1.Tên.");
+                System.out.println("2.Email.");
+                System.out.println("3.SDT");
+                System.out.println("4.Index Project.");
+                System.out.println("5.Year Of Joining.");
+                System.out.println("Nhập số 0 để dừng.");
+                n = Integer.parseInt(sc.nextLine());
+                if(n == 0) {
+                    System.out.println("Dừng sửa.");
+                    break;
+                }
+                switch (n) {
+                    case 1:
+                        System.out.println("Nhập tên bạn muốn thay thế: ");
+                        String name = sc.nextLine();
+                        persons.get(id).setName(name);
+                        break;
+                    case 2:
+                        System.out.println("Nhập email bạn muốn thay thế: ");
+                        String email = sc.nextLine();
+                        persons.get(id).setEmailAddress(email);
+                        break;
+                    case 3:
+                        System.out.println("Nhập SDT muốn thay thế: ");
+                        String phoneNumber = sc.nextLine();
+                        persons.get(id).setPhoneNumber(phoneNumber);
+                        break;
+                    case 4:
+                        System.out.println("Nhập Index Project muốn thay thế: ");
+                        int indexProject = Integer.parseInt(sc.nextLine());
+                        persons.get(id).setIndexProject(indexProject);
+                        break;
+                    case 5:
+                        System.out.println("Nhập ngày vào làm muốn thay thế: ");
+                        int yearOfJoining = Integer.parseInt(sc.nextLine());
+                        ((Manager) persons.get(id)).setYearOfJoining(yearOfJoining);
+                }
+            }while(true);
+
+        } else if (persons.get(id) instanceof Leader) {
+            do{
+                System.out.println("Bạn muốn sửa thông tin nào?");
+                System.out.println("1.Tên.");
+                System.out.println("2.Email.");
+                System.out.println("3.SDT");
+                System.out.println("4.Index Project.");
+                System.out.println("5.Year Of Joining.");
+                System.out.println("6.Group Index.");
+                System.out.println("Nhập số 0 để dừng.");
+                n = Integer.parseInt(sc.nextLine());
+                if(n == 0) {
+                    System.out.println("Dừng sửa.");
+                    break;
+                }
+                switch (n) {
+                    case 1:
+                        System.out.println("Nhập tên bạn muốn thay thế: ");
+                        String name = sc.nextLine();
+                        persons.get(id).setName(name);
+                        break;
+                    case 2:
+                        System.out.println("Nhập email bạn muốn thay thế: ");
+                        String email = sc.nextLine();
+                        persons.get(id).setEmailAddress(email);
+                        break;
+                    case 3:
+                        System.out.println("Nhập SDT muốn thay thế: ");
+                        String phoneNumber = sc.nextLine();
+                        persons.get(id).setPhoneNumber(phoneNumber);
+                        break;
+                    case 4:
+                        System.out.println("Nhập Index Project muốn thay thế: ");
+                        int indexProject = Integer.parseInt(sc.nextLine());
+                        persons.get(id).setIndexProject(indexProject);
+                        break;
+                    case 5:
+                        System.out.println("Nhập ngày vào làm muốn thay thế: ");
+                        int yearOfJoining = Integer.parseInt(sc.nextLine());
+                        ((Leader) persons.get(id)).setYearOfJoining(yearOfJoining);
+                    case 6:
+                        System.out.println("Nhập vào Index Group muốn thay thế: ");
+                        int indexGroup = Integer.parseInt(sc.nextLine());
+                        ((Leader) persons.get(id)).setGroupIndex(indexGroup);
+                }
+            }while(true);
+
+        } else if (persons.get(id) instanceof Customer) {
+            do{
+                System.out.println("Bạn muốn sửa thông tin nào?");
+                System.out.println("1.Tên.");
+                System.out.println("2.Email.");
+                System.out.println("3.SDT");
+                System.out.println("4.Index Project.");
+                System.out.println("5.Trạng thái thanh toán.");
+                System.out.println("Nhập số 0 để dừng.");
+                n = Integer.parseInt(sc.nextLine());
+                if(n == 0) {
+                    System.out.println("Dừng sửa.");
+                    break;
+                }
+                switch (n) {
+                    case 1:
+                        System.out.println("Nhập tên bạn muốn thay thế: ");
+                        String name = sc.nextLine();
+                        persons.get(id).setName(name);
+                        break;
+                    case 2:
+                        System.out.println("Nhập email bạn muốn thay thế: ");
+                        String email = sc.nextLine();
+                        persons.get(id).setEmailAddress(email);
+                        break;
+                    case 3:
+                        System.out.println("Nhập SDT muốn thay thế: ");
+                        String phoneNumber = sc.nextLine();
+                        persons.get(id).setPhoneNumber(phoneNumber);
+                        break;
+                    case 4:
+                        System.out.println("Nhập Index Project muốn thay thế: ");
+                        int indexProject = Integer.parseInt(sc.nextLine());
+                        persons.get(id).setIndexProject(indexProject);
+                        break;
+                    case 5:
+                        System.out.println("Nhập trạng thái thanh toán muốn thay thế: ");
+                        System.out.println("1.Đã thanh toán.");
+                        System.out.println("2.Chưa thanh toán.");
+                        System.out.println("Nhập lựa chọn: ");
+                        int choice = Integer.parseInt(sc.nextLine());
+                        if(choice == 1) {
+                            ((Customer) persons.get(id)).Pay();
+                        }else if(choice == 2) {
+                            ((Customer) persons.get(id)).setPaidProject(false);
+                        }
+                        break;
+                }
+            }while(true);
+
+        }else if (persons.get(id) instanceof Employee) {
+            do{
+                System.out.println("Bạn muốn sửa thông tin nào?");
+                System.out.println("1.Tên.");
+                System.out.println("2.Email.");
+                System.out.println("3.SDT");
+                System.out.println("4.Index Project.");
+                System.out.println("5.Year Of Joining.");
+                System.out.println("Nhập số 0 để dừng.");
+                n = Integer.parseInt(sc.nextLine());
+                if(n == 0) {
+                    System.out.println("Dừng sửa.");
+                    break;
+                }
+                switch (n) {
+                    case 1:
+                        System.out.println("Nhập tên bạn muốn thay thế: ");
+                        String name = sc.nextLine();
+                        persons.get(id).setName(name);
+                        break;
+                    case 2:
+                        System.out.println("Nhập email bạn muốn thay thế: ");
+                        String email = sc.nextLine();
+                        persons.get(id).setEmailAddress(email);
+                        break;
+                    case 3:
+                        System.out.println("Nhập SDT muốn thay thế: ");
+                        String phoneNumber = sc.nextLine();
+                        persons.get(id).setPhoneNumber(phoneNumber);
+                        break;
+                    case 4:
+                        System.out.println("Nhập Index Project muốn thay thế: ");
+                        int indexProject = Integer.parseInt(sc.nextLine());
+                        persons.get(id).setIndexProject(indexProject);
+                        break;
+                    case 5:
+                        System.out.println("Nhập ngày vào làm muốn thay thế: ");
+                        int yearOfJoining = Integer.parseInt(sc.nextLine());
+                        ((Employee) persons.get(id)).setYearOfJoining(yearOfJoining);
+                }
+            }while(true);
+        }
     }
 }

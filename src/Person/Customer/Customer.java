@@ -27,6 +27,13 @@ public class Customer extends Person {
     public void input() {
         super.input();
         System.out.println("Thanh toán: ");
+        System.out.println("1.Đã thanh toán.");
+        System.out.println("2.Chưa thanh toán.");
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        if (choice == 1) {
+            Pay();
+        }
         if(isPaidProject){
             System.out.print("Đã thanh toán.");
         }else{
